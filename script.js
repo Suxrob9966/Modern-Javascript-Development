@@ -23,7 +23,7 @@ add('pear', 2);
 console.log(cart);
 *****/
 
-
+/*******
 const ShoppingCart2 = (function (){ // with IFI function we create new scope and retur data just once. it is called only once, when it is created
     const cart = [];
     const shippingCost = 10;
@@ -53,4 +53,16 @@ ShoppingCart2.addToCart('grape', 25);
 
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost); //this is private so can't access
+********/
 
+/*****
+// Common JS modules
+// Export
+export.addToCart = function(product, quantity){
+    cart.push({product, quantity});
+    console.log(`${quantity} ${product} added to cart (shipping cost is ${shippingCost})`);
+};
+
+// Import
+const { addToCart } = require('./shoppingCart.js'); 
+*******/
