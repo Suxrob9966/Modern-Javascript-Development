@@ -1,4 +1,4 @@
-/*******
+// /*******
 // Importing module
 // import {addToCart, totalPrice as price, tq} from './shoppingCart.js'; // to cahnge the name of the variable put as and the new var name
 // addToCart('bread', 5);
@@ -13,15 +13,15 @@ ShoppingCart.addToCart('orange', 7);
 console.log(ShoppingCart.shippingCost);
 */
 
-/*****
+// /*****
 // import add, {addToCart, totalPrice as price, tq} from './shoppingCart.js'; // mixed imports (default and named), this is not desirable
-import add, {cart} from './shoppingCart.js';
+import add, { cart } from './shoppingCart.js';
 add('pizza', 3);
 add('apple', 6);
 add('pear', 2);
 
 console.log(cart);
-*****/
+// *****/
 
 /*******
 const ShoppingCart2 = (function (){ // with IFI function we create new scope and retur data just once. it is called only once, when it is created
@@ -67,17 +67,17 @@ export.addToCart = function(product, quantity){
 const { addToCart } = require('./shoppingCart.js'); 
 *******/
 
-
-import  cloneDeep  from "./node_modules/lodash-es/cloneDeep.js";
+// import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+import cloneDeep from 'lodash-es';
 
 const state = {
-    cart: [
-        {product: 'bread', quantity: 3},
-        {product: 'apple', quantity: 10},
-    ],
-    user: {
-        loggedIn: true,
-    },
+  cart: [
+    { product: 'bread', quantity: 3 },
+    { product: 'apple', quantity: 10 },
+  ],
+  user: {
+    loggedIn: true,
+  },
 };
 
 const stateClone = Object.assign({}, state); // copying state obj to stateClone obj
@@ -90,3 +90,7 @@ state.user.loggedIn = false;
 
 console.log(stateClone);
 console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
