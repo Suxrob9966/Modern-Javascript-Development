@@ -104,3 +104,13 @@ class Person {
 }
 
 const suxrob = new Person('Suxrob');
+
+Promise.resolve('TEST').then(x => console.log(x));
+console.log(cart.find(el => el.quantity >= 2));
+
+import 'core-js/stable';
+// import 'core-js/stable/array/find';
+// import 'core-js/stable/promise';
+
+// Pollifilling async functions
+import 'regenerator-runtime/runtime';
